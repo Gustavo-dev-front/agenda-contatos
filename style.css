@@ -1,0 +1,85 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+input, label {
+  display: flex;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+main {
+  padding: 10px;
+}
+
+.input_box {
+  width: 100%;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+}
+
+tbody td {
+  color: #8a8a8a;
+  font-weight: 400;
+  font-size: .9rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: .5;
+}
+
+.remover {
+  color: white;
+  background-color:#FF0000B2;
+}
+
+.editar {
+  background-color: #ccc;
+}

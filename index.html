@@ -5,12 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./style.css">
   <script defer src="./script.js"></script>
 </head>
 
 <body>
-
+  <main class="container">
+    <h1>Minha agenda</h1>
+    <form>
+      <div class="input_box">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Cicrano da Silva">
+      </div>
+      <div class="input_box">
+        <label for="nome">Telefone</label>
+        <input type="tel" name="telefone" id="telefone" placeholder="(99) 9999-9999">
+      </div>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gustavo Alves Dias</td>
+          <td>(11) 95281-7444</td>
+          <td><span class="material-symbols-outlined icon remover">delete</span></td>
+          <td><span class="material-symbols-outlined icon editar">edit</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </body>
 
 </html>
