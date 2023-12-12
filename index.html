@@ -21,14 +21,14 @@
       <div class="input_container">
         <div class="input_box">
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" placeholder="Cicrano da Silva">
+          <input type="text" name="nome" id="nome" placeholder="Cicrano da Silva" required>
         </div>
         <div class="input_box">
           <label for="nome">Telefone</label>
-          <input type="tel" name="telefone" id="telefone" placeholder="(99) 9999-9999">
+          <input type="tel" name="telefone" id="telefone" placeholder="(99) 9999-9999" required maxlength="15">
         </div>
       </div>
-      <button class="cadastrar">Cadastrar</button>
+      <button id="cadastrar">Cadastrar</button>
     </form>
     <table>
       <thead>
@@ -38,12 +38,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Gustavo Alves Dias</td>
-          <td>(11) 95281-7444</td>
-          <td><span class="material-symbols-outlined icon remover">delete</span></td>
-          <td><span class="material-symbols-outlined icon editar">edit</span></td>
-        </tr>
       </tbody>
     </table>
   </main>

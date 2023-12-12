@@ -52,7 +52,6 @@ main {
 }
 
 table {
-  text-align: center;
   width: 100%;
 }
 
@@ -60,6 +59,10 @@ tbody td {
   color: #8a8a8a;
   font-weight: 400;
   font-size: .9rem;
+}
+
+tbody td:nth-child(2) {
+  text-align: center;
 }
 
 .icon {
@@ -85,7 +88,7 @@ tbody td {
   background-color: #ccc;
 }
 
-.cadastrar {
+#cadastrar {
   border: none;
   border-radius: 4px;
   padding: 10px;
@@ -94,6 +97,6 @@ tbody td {
   cursor: pointer;
 }
 
-.cadastrar:hover {
+#cadastrar:hover {
   opacity: .5;
 }
