@@ -20,19 +20,23 @@ function limparInputs() {
   TELEFONE.value = "";
 }
 
+function criarContato(nome, telefone) {
+  const row = document.createElement("tr");
+  row.dataset.index = index;
+  row.innerHTML = `<tr>
+  <td>${nome} </td>  
+  <td>${telefone} </td>  
+  <td><span class="material-symbols-outlined icon remover" onclick="remover(${index})">delete</span> </td>  
+  <td><span class="material-symbols-outlined icon editar" onclick="editar(${index})">edit</span></td>  
+  </tr>
+  `;
+  CONTATOS.push({ index, element: row });
+  index++;
+}
+
 function adicionar() {
   if (!edit.status) {
-    const row = document.createElement("tr");
-    row.dataset.index = index;
-    row.innerHTML = `<tr>
-    <td>${NOME.value} </td>  
-    <td>${TELEFONE.value} </td>  
-    <td><span class="material-symbols-outlined icon remover" onclick="remover(${index})">delete</span> </td>  
-    <td><span class="material-symbols-outlined icon editar" onclick="editar(${index})">edit</span></td>  
-    </tr>
-    `;
-    CONTATOS.push({ index, element: row });
-    index++;
+    criarContato(NOME.value, TELEFONE.value);
   } else {
     const name = edit.element.querySelector("td:first-child");
     const tel = edit.element.querySelector("td:nth-child(2)");
