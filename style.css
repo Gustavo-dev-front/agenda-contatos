@@ -21,7 +21,8 @@ body {
   margin: auto;
 }
 
-input, label {
+input,
+label {
   display: flex;
   width: 100%;
 }
@@ -65,6 +66,11 @@ tbody td:nth-child(2) {
   text-align: center;
 }
 
+tbody td:nth-child(3),
+tbody td:nth-child(4) {
+  max-width: 15px;
+}
+
 .icon {
   display: flex;
   align-items: center;
@@ -81,7 +87,7 @@ tbody td:nth-child(2) {
 
 .remover {
   color: white;
-  background-color:#FF0000B2;
+  background-color: #FF0000B2;
 }
 
 .editar {
@@ -103,8 +109,4 @@ tbody td:nth-child(2) {
 
 .error {
   border-color: #FF0000B2;
-}
-
-.error::placeholder {
-  color: #FF0000B2;
 }
