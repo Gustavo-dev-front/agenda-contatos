@@ -11,9 +11,30 @@ const edit = {
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
-  adicionar();
-  exibir();
+  formatarTelefone();
+  if (validarTelefone()) {
+    adicionar();
+    exibir();
+  }
 });
+
+function formatarTelefone() {
+  let telefone = TELEFONE.value.replace(/\D/g, "");
+  telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+  TELEFONE.value = telefone;
+}
+
+function validarTelefone() {
+  const regex = /^(\(\d{2}\)\s?\d{5}-?\d{4})$/;
+
+  if (!regex.test(TELEFONE.value)) {
+    TELEFONE.classList.add("error");
+  } else {
+    TELEFONE.classList.remove("error");
+  }
+
+  return regex.test(TELEFONE.value);
+}
 
 function limparInputs() {
   NOME.value = "";

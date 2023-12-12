@@ -100,3 +100,11 @@ tbody td:nth-child(2) {
 #cadastrar:hover {
   opacity: .5;
 }
+
+.error {
+  border-color: #FF0000B2;
+}
+
+.error::placeholder {
+  color: #FF0000B2;
+}
