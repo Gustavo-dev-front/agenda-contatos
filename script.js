@@ -4,6 +4,10 @@ const FORM = document.querySelector("form");
 const TABELA = document.querySelector("table tbody");
 const CONTATOS = [];
 let index = 0;
+const edit = {
+  status: false,
+  element: null,
+};
 
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,18 +21,37 @@ function limparInputs() {
 }
 
 function adicionar() {
-  const row = document.createElement("tr");
-  row.dataset.index = index;
-  row.innerHTML = `<tr>
-  <td>${NOME.value} </td>  
-  <td>${TELEFONE.value} </td>  
-  <td><span class="material-symbols-outlined icon remover" onclick="remover(${index})">delete</span> </td>  
-  <td><span class="material-symbols-outlined icon editar">edit</span></td>  
-  </tr>
-  `;
-  CONTATOS.push({ index, element: row });
+  if (!edit.status) {
+    const row = document.createElement("tr");
+    row.dataset.index = index;
+    row.innerHTML = `<tr>
+    <td>${NOME.value} </td>  
+    <td>${TELEFONE.value} </td>  
+    <td><span class="material-symbols-outlined icon remover" onclick="remover(${index})">delete</span> </td>  
+    <td><span class="material-symbols-outlined icon editar" onclick="editar(${index})">edit</span></td>  
+    </tr>
+    `;
+    CONTATOS.push({ index, element: row });
+    index++;
+  } else {
+    const name = edit.element.querySelector("td:first-child");
+    const tel = edit.element.querySelector("td:nth-child(2)");
+    name.innerText = NOME.value;
+    tel.innerText = TELEFONE.value;
+    edit.status = false;
+    edit.element = null;
+  }
+
   limparInputs();
-  index++;
+}
+
+function editar(i) {
+  const position = CONTATOS.findIndex(({ index }) => index === i);
+  const row_to_edit = CONTATOS[position].element;
+  NOME.value = row_to_edit.querySelector("td:first-child").innerText;
+  TELEFONE.value = row_to_edit.querySelector("td:nth-child(2)").innerText;
+  edit.status = true;
+  edit.element = row_to_edit;
 }
 
 function remover(i) {
